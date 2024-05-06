@@ -1,0 +1,46 @@
+.hydration-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+
+  .progress-container {
+    display: flex;
+    gap: 20px;
+
+    .water-buttons {
+      display: flex;
+      gap: 15px;
+      flex-direction: column;
+    }
+
+    .glass-container {
+      border: 1px solid black;
+      height: 300px;
+      width: 200px;
+      position: relative;
+      display: flex;
+      align-items: flex-end;
+      background-color: white;
+
+      .glass {
+        background-color: aqua;
+        width: 100%;
+        transition: height 0.5s ease;
+      }
+    }
+  }
+  .common-container {
+    height: 50px;
+
+    .container-goal {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+
+      .edit-goal {
+        cursor: pointer;
+      }
+    }
+  }
+}

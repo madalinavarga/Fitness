@@ -1,0 +1,14 @@
+<div class="fullscreen-dialog">
+  <div class="container-dialog">
+    <h2 mat-dialog-title>{{ data?.title }}</h2>
+    <div mat-dialog-content>
+      <mat-form-field >
+        <input matInput [(ngModel)]="data.dailyGoal" />
+      </mat-form-field>
+    </div>
+    <div mat-dialog-actions class="action-btn">
+      <button mat-button [mat-dialog-close]="data.dailyGoal" cdkFocusInitial color="primary">Save</button>
+      <button mat-button (click)="onNoClick()" color="warn">Cancel</button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,13 @@
+.main-container {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  margin: 5px;
+  margin-bottom: 20px;
+}
+
+.active-link {
+  color: white;
+  background-color: rgb(64, 64, 79);
+  font-weight: bold;
+}

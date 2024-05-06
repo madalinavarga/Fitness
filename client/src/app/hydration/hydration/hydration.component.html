@@ -1,0 +1,45 @@
+<div class="hydration-container">
+
+  <div class="common-container" >
+  <div *ngIf="!dailyGoalSet; else showGoal"  class="container-goal">
+    <input type="number" placeholder="Water in ml" [formControl]="dailyGoal" />
+    <button (click)="setGoal()">Set</button>
+  </div>
+</div>
+
+  <div class="progress-container">
+    <div class="glass-container">
+      <div class="glass" [style.height]="fillHeight + '%'"></div>
+    </div>
+    <div class="water-buttons">
+      <button mat-raised-button (click)="addWater(100)" [disabled]="isDisable(100)">
+        Add 100 ml
+      </button>
+      <button mat-raised-button (click)="addWater(250)" [disabled]="isDisable(250)">
+        Add 250 ml
+      </button>
+      <button mat-raised-button (click)="addWater(500)" [disabled]="isDisable(500)">
+        Add 500 ml
+      </button>
+      <button
+        *ngIf="this.dailyGoal.value - this.currentAmount > 0"
+        mat-raised-button
+        (click)="addWater(this.dailyGoal.value - this.currentAmount)"
+        [disabled]="!dailyGoalSet"
+      >
+        Add {{ this.dailyGoal.value - this.currentAmount }} ml
+      </button>
+
+      <button mat-raised-button (click)="undo()" [disabled]="!waterList.length">
+        Undo
+      </button>
+    </div>
+  </div>
+</div>
+
+<ng-template #showGoal>
+  <h3 class="container-goal">
+    <b>Your goal:</b>
+    <div class="edit-goal" (click)="openEditDialog(dailyGoal.value)">{{ dailyGoal.value }} ml</div>
+  </h3>
+</ng-template>
