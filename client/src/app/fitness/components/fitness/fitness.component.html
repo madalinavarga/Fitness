@@ -1,0 +1,18 @@
+<div class="layout">
+  <div class="container-groups">
+    <ng-container *ngFor="let entry of muscleGroupsEntries">
+      <button mat-raised-button (click)="setSelectedGroup(entry)">
+        {{ entry.name }}
+      </button>
+    </ng-container>
+  </div>
+
+  <div class="container-selected-group">
+    <h3>{{ selectedMuscle.name }}</h3>
+    <div *ngIf="exercisesByMuscleGroup" class="cards">
+      @for(exercise of exercisesByMuscleGroup; track exercise.id;){
+      <app-exercise-card [exercise]="exercise"></app-exercise-card>
+      }
+    </div>
+  </div>
+</div>

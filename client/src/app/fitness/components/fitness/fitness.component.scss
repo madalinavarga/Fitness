@@ -1,0 +1,39 @@
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 6fr;
+  margin-top: 50px;
+
+  .container-groups {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: start;
+    margin-left: 10px;
+
+    button {
+      transition: width 0.3s ease;
+      width: 100px;
+
+      &:hover {
+        width: 120px;
+      }
+    }
+  }
+
+  .container-selected-group {
+    margin-bottom: 5px;
+
+    h3 {
+      color: #333;
+      font-size: 24px;
+      text-align: center;
+    }
+
+    .cards {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 5px;
+    }
+  }
+}
