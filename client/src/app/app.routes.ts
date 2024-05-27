@@ -5,9 +5,10 @@ import { ExerciseCardComponent } from "./fitness/components/exercise-card/exerci
 import { DailyWorkoutComponent } from "./fitness/components/daily-workout/daily-workout.component";
 
 export const routes: Routes = [
-    { path: 'hydration', component: HydrationComponent },
-    { path: 'fitness', component: FitnessComponent },
-    { path: 'card', component: ExerciseCardComponent },
-    { path: 'daily-workout', component: DailyWorkoutComponent }
+  { path: "hydration", component: HydrationComponent },
+  { path: "card", component: ExerciseCardComponent },
+  { path: "daily-workout", component: DailyWorkoutComponent },
+  { path: "fitness", component: FitnessComponent },
 
+  { path: "**", redirectTo: "fitness" },
 ];

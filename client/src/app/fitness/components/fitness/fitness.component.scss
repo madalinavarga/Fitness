@@ -17,6 +17,11 @@
       &:hover {
         width: 120px;
       }
+
+      &.isSelected{
+        width: 120px;
+        border: blue 1px solid
+      }
     }
   }
 

@@ -4,6 +4,7 @@ export interface Exercise {
     title: string;
     sets?: number
     repetitions?: number;
+    completed?: boolean;
 }
 
 

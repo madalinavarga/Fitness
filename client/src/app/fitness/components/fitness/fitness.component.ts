@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, inject } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { muscleGroups } from '../../../data/exercises';
 import { Exercise } from '../../models/exercise.interface';
 import { ExercisesService } from '../../services/exercises.service';
@@ -12,13 +12,16 @@ import { ExerciseCardComponent } from '../exercise-card/exercise-card.component'
   templateUrl: './fitness.component.html',
   styleUrl: './fitness.component.scss'
 })
-export class FitnessComponent {
-
+export class FitnessComponent implements OnInit{
   exercisesService = inject(ExercisesService)
 
   muscleGroupsEntries: { id: number; name: string }[] = muscleGroups;
   selectedMuscle: { id: number; name: string } = { id: 0, name: '' };
   exercisesByMuscleGroup: Exercise[] = []
+
+  ngOnInit(): void {
+    this.setSelectedGroup(muscleGroups[0]);
+  }
 
   setSelectedGroup(entry: { id: number, name: string }): void {
     this.selectedMuscle = entry;

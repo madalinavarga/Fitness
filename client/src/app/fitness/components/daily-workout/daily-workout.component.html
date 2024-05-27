@@ -1,20 +1,22 @@
 <div class="cards">
-@for (exercise of dailyExercisesSig(); track exercise.id) {
-    <div class="card">
-        <img class="card-img" [src]="exercise.imgSrc" alt="Exercise image">
-        <div class="card-content">
-          <h2>{{ exercise.title }}</h2>
-          <div>
-            <label>Număr de seturi:</label>
-            <div>{{ exercise.sets }}</div>
-          </div>
-          <div>
-            <label>Număr de repetări:</label>
-            <div>{{ exercise.repetitions }}</div>
-          </div>
-          <button mat-raised-button>Done</button>
-        </div>
+  @for (exercise of dailyExercisesSig(); track exercise.id) {
+  <div class="card">
+    <img class="card-img" [src]="exercise.imgSrc" alt="Exercise image" />
+    <div class="card-content">
+      <div class="title-area">
+        <h2>{{ exercise.title }}</h2>
+        <mat-slide-toggle (toggleChange)="handleToggleChange(exercise)" value="exercise.completed"> </mat-slide-toggle>
       </div>
-}
 
+      <div class="details">
+        <label>Sets:</label>
+        <div>{{ exercise.sets }}</div>
+      </div>
+      <div class="details">
+        <label>Repetitions:</label>
+        <div>{{ exercise.repetitions }}</div>
+      </div>
+    </div>
+  </div>
+  }
 </div>

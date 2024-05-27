@@ -6,11 +6,11 @@
   <div class="card-content">
     <h2>{{ exercise().title }}</h2>
     <div class="input">
-      <label>Număr de seturi:</label>
+      <label>Sets:</label>
       <input type="number" [(ngModel)]="exercise().sets" />
     </div>
     <div class="input">
-      <label>Număr de repetări:</label>
+      <label>Repetitions:</label>
       <input type="number" [(ngModel)]="exercise().repetitions" />
     </div>
     <button mat-raised-button (click)="handleAddExercise()">Adauga</button>

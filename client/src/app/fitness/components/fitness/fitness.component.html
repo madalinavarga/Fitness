@@ -1,7 +1,7 @@
 <div class="layout">
   <div class="container-groups">
     <ng-container *ngFor="let entry of muscleGroupsEntries">
-      <button mat-raised-button (click)="setSelectedGroup(entry)">
+      <button mat-raised-button (click)="setSelectedGroup(entry)" [ngClass]="{'isSelected': selectedMuscle === entry}">
         {{ entry.name }}
       </button>
     </ng-container>

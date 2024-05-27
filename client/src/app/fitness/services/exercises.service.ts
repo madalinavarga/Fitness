@@ -34,4 +34,14 @@ export class ExercisesService {
       this.dailyWorkoutSig.set([...this.dailyWorkoutSig(), newExercise]);
     }
   }
+
+  changeExerciseStatus(exercise:Exercise):void{{
+    const updatedExercises= this.dailyWorkoutSig().map((e)=>{
+      if (e.id === exercise.id && e.title === exercise.title) {
+        return { ...e, completed: !e.completed };
+      }
+      return e;
+    } );
+    this.dailyWorkoutSig.set(updatedExercises);
+  }}
 }

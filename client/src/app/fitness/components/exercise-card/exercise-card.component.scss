@@ -1,16 +1,19 @@
+$fixed-height: 300px;
+$fixed-width: 600px;
+
 .card {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 10px;
-  width: 40vw;
-  height: 40vh;
+  width: $fixed-width;
+  height:$fixed-height;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
   border: 1px solid #ddd;
   border-radius: 10px;
   background-color: rgb(210, 191, 168);
 
   .card-img {
-    height: 100%;
+    height:$fixed-height;
     width: 100%;
   }
 
