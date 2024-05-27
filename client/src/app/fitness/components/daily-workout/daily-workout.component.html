@@ -1,0 +1,20 @@
+<div class="cards">
+@for (exercise of dailyExercisesSig(); track exercise.id) {
+    <div class="card">
+        <img class="card-img" [src]="exercise.imgSrc" alt="Exercise image">
+        <div class="card-content">
+          <h2>{{ exercise.title }}</h2>
+          <div>
+            <label>Număr de seturi:</label>
+            <div>{{ exercise.sets }}</div>
+          </div>
+          <div>
+            <label>Număr de repetări:</label>
+            <div>{{ exercise.repetitions }}</div>
+          </div>
+          <button mat-raised-button>Done</button>
+        </div>
+      </div>
+}
+
+</div>

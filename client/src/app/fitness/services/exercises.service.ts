@@ -1,4 +1,4 @@
-import { Injectable, OnInit, signal } from '@angular/core';
+import { Injectable, OnInit, Signal, computed, signal } from '@angular/core';
 import { allExercises as mockData } from '../../data/exercises';
 import { Exercise, ExerciceDictionary } from '../models/exercise.interface';
 
@@ -16,6 +16,7 @@ export class ExercisesService {
     ]
   })
   selectedGroupSig = signal<Exercise[]>([])
+  dailyWorkoutSig = signal<Exercise[]>([]);
 
 
   constructor() {
@@ -24,5 +25,13 @@ export class ExercisesService {
 
   setGroupMuscle(groupId: number): void {
     this.selectedGroupSig.set(this.allExercisesSig()[groupId]);
+  }
+
+  addExerciseToDailyWorkout(newExercise: Exercise): void {
+    const exists = this.dailyWorkoutSig().some(exercise => exercise.id === newExercise.id && exercise.title === newExercise.title);
+
+    if (!exists) {
+      this.dailyWorkoutSig.set([...this.dailyWorkoutSig(), newExercise]);
+    }
   }
 }

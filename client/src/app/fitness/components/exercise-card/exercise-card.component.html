@@ -1,7 +1,7 @@
 <div class="card">
   <img
     class="card-img"
-    src="https://media.self.com/photos/61f2b0cd898b9838f51324f7/4:3/w_5712,h_4284,c_limit/Gail-reclined-spinal-twist.jpg"
+    [src]="exercise().imgSrc"
   />
   <div class="card-content">
     <h2>{{ exercise().title }}</h2>
@@ -13,7 +13,6 @@
       <label>Număr de repetări:</label>
       <input type="number" [(ngModel)]="exercise().repetitions" />
     </div>
-    <button mat-raised-button (click)="handleAddExercise()">Add</button>
-    
+    <button mat-raised-button (click)="handleAddExercise()">Adauga</button>
   </div>
 </div>
