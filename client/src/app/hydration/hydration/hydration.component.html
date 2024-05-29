@@ -1,7 +1,7 @@
 <div class="hydration-container">
 
   <div class="common-container" >
-  <div *ngIf="!dailyGoalSet; else showGoal"  class="container-goal">
+  <div *ngIf="!dailyGoalSet(); else showGoal"  class="container-goal">
     <input type="number" placeholder="Water in ml" [formControl]="dailyGoal" />
     <button (click)="setGoal()">Set</button>
   </div>
@@ -25,12 +25,12 @@
         *ngIf="this.dailyGoal.value - this.currentAmount > 0"
         mat-raised-button
         (click)="addWater(this.dailyGoal.value - this.currentAmount)"
-        [disabled]="!dailyGoalSet"
+        [disabled]="!dailyGoalSet()"
       >
         Add {{ this.dailyGoal.value - this.currentAmount }} ml
       </button>
 
-      <button mat-raised-button (click)="undo()" [disabled]="!waterList.length">
+      <button mat-raised-button (click)="undo()" [disabled]="!waterAmounts().length">
         Undo
       </button>
     </div>

@@ -4,14 +4,16 @@
     <img class="card-img" [src]="exercise.imgSrc" alt="Exercise image" />
     <div class="card-content">
       <div class="title-area">
-        <h2>{{ exercise.title }}</h2>
-        <mat-slide-toggle (toggleChange)="handleToggleChange(exercise)" [checked]="exercise.completed"> 
+        <h3>{{ exercise.title }}</h3>
+        <div class="card-status">
           @if(!exercise.completed){
             <span> Mark as done!</span>
           }@else {
             <span>Done!</span>
           }
-        </mat-slide-toggle>
+          <mat-slide-toggle (toggleChange)="handleToggleChange(exercise)" [checked]="exercise.completed" > 
+          </mat-slide-toggle>
+        </div>
       </div>
 
       <div class="details">

@@ -1,7 +1,11 @@
 .layout {
   display: grid;
   grid-template-columns: 1fr 6fr;
-  margin-top: 50px;
+  margin-top: 2rem;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
 
   .container-groups {
     display: flex;
@@ -12,16 +16,20 @@
 
     button {
       transition: width 0.3s ease;
-      width: 100px;
+      width: 6rem;
 
       &:hover {
-        width: 120px;
+        width: 8rem;
       }
 
       &.isSelected {
-        width: 120px;
+        width: 8rem;
         border: blue 1px solid;
       }
+    }
+
+    @media (max-width: 768px) {
+      align-items: center;
     }
   }
 
@@ -38,8 +46,10 @@
       display: flex;
       flex-direction: row;
       flex-wrap: wrap;
-      // justify-content: space-around;
+      justify-content: space-between;
       gap: 50px;
+
+      
     }
 
     .btn{
@@ -49,7 +59,11 @@
       background-color: rgb(238, 238, 174);
       align-items: center;
       display: flex;
-      gap:4px
+      gap:4px;
+
+      @media (max-width: 768px) {
+        display: none;
+      }
     }
   
   }

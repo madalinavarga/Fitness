@@ -1,10 +1,12 @@
 <div class="card">
-  <img
-    class="card-img"
-    [src]="exercise().imgSrc"
-  />
+  <img class="card-img" [src]="exercise().imgSrc" />
   <div class="card-content">
-    <h2>{{ exercise().title }}</h2>
+    <div class="title-area">
+      <h2>{{ exercise().title }}</h2>
+      <button (click)="handleAddExercise()" [disabled]="handleAddVisibility()">
+        <mat-icon>add</mat-icon>
+      </button>
+    </div>
     <div class="input">
       <label>Sets:</label>
       <input type="number" [(ngModel)]="exercise().sets" />
@@ -13,6 +15,5 @@
       <label>Repetitions:</label>
       <input type="number" [(ngModel)]="exercise().repetitions" />
     </div>
-    <button mat-raised-button (click)="handleAddExercise()" [hidden]="handleAddVisibility()">Add</button>
   </div>
 </div>

@@ -1,5 +1,5 @@
-$fixed-height: 300px;
-$fixed-width: 450px;
+$fixed-height: 20rem;
+$fixed-width: 25rem;
 
 $img-height: 0.6 * $fixed-height;
 $card-content-height: 0.4 * $fixed-height;
@@ -7,8 +7,9 @@ $card-content-height: 0.4 * $fixed-height;
 .cards {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
-  margin:10px;
+  justify-content: space-between;
+  gap: 1rem;
+  margin:1.5rem;
 
   .card {
     display: flex;
@@ -46,6 +47,11 @@ $card-content-height: 0.4 * $fixed-height;
         gap: 15px;
         align-items: center;
         justify-content: space-between;
+      }
+
+      .card-status{
+        display: flex;
+        gap:5px;
       }
     }
 
