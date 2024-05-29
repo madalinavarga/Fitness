@@ -5,7 +5,13 @@
     <div class="card-content">
       <div class="title-area">
         <h2>{{ exercise.title }}</h2>
-        <mat-slide-toggle (toggleChange)="handleToggleChange(exercise)" value="exercise.completed"> </mat-slide-toggle>
+        <mat-slide-toggle (toggleChange)="handleToggleChange(exercise)" [checked]="exercise.completed"> 
+          @if(!exercise.completed){
+            <span> Mark as done!</span>
+          }@else {
+            <span>Done!</span>
+          }
+        </mat-slide-toggle>
       </div>
 
       <div class="details">

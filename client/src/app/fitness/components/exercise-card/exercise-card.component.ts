@@ -16,8 +16,16 @@ import { ExercisesService } from '../../services/exercises.service';
 export class ExerciseCardComponent {
   exercisesService = inject(ExercisesService)
   exercise = input.required<Exercise>();
+  dailyWorkoutSig = this.exercisesService.dailyWorkoutSig;
 
   handleAddExercise() {
     this.exercisesService.addExerciseToDailyWorkout(this.exercise());
+  }
+
+  handleAddVisibility():boolean{
+    if(this.dailyWorkoutSig().find((e)=> e.id === this.exercise().id && e.title === this.exercise().title)){
+      return true;
+    }
+    return false;
   }
 }

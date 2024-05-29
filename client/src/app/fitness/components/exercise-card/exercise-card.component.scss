@@ -1,5 +1,5 @@
 $fixed-height: 300px;
-$fixed-width: 600px;
+$fixed-width: 500px;
 
 .card {
   display: grid;
@@ -20,14 +20,14 @@ $fixed-width: 600px;
   .card-content {
     display: flex;
     flex-direction: column;
+    justify-content: space-around;
+    gap:5px;
     align-items: center;
-    gap: 10px;
-    padding: 10px;
+    height:$fixed-height;
 
     .input {
       display: flex;
       flex-direction: column;
-      gap: 5px;
       align-items: start;
     }
   }

@@ -9,6 +9,7 @@
 
   <div class="container-selected-group">
     <h3>{{ selectedMuscle.name }}</h3>
+    <button class="btn" mat-icon-buttoncolor="primary" (click)="addAllExercisesToDailyWorkout()">All <mat-icon>library_add</mat-icon> </button>
     <div *ngIf="exercisesByMuscleGroup" class="cards">
       @for(exercise of exercisesByMuscleGroup; track exercise.id;){
       <app-exercise-card [exercise]="exercise"></app-exercise-card>

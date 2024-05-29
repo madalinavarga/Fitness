@@ -18,9 +18,9 @@
         width: 120px;
       }
 
-      &.isSelected{
+      &.isSelected {
         width: 120px;
-        border: blue 1px solid
+        border: blue 1px solid;
       }
     }
   }
@@ -38,7 +38,19 @@
       display: flex;
       flex-direction: row;
       flex-wrap: wrap;
-      gap: 5px;
+      // justify-content: space-around;
+      gap: 50px;
     }
+
+    .btn{
+      position:absolute;
+      top: +55px;
+      right: +100px;
+      background-color: rgb(238, 238, 174);
+      align-items: center;
+      display: flex;
+      gap:4px
+    }
+  
   }
 }

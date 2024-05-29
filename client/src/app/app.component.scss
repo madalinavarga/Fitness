@@ -1,26 +1,29 @@
-.main-container {
+.main-layer {
   display: flex;
-  flex-direction: row;
-  gap: 10px;
-  margin: 10px;
-  margin-bottom: 30px;
-  margin-top: 10px;
-  position: relative;
+  flex-direction: column;
+  margin: 20px;
 
-  .exercise-count {
-    background-color: rgb(171, 147, 147);
-    border-radius: 50%;
-    padding: 5px;
-    padding-left: 7px;
-    padding-right: 7px;
+  .nav-container {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    position: relative;
 
-    position: absolute;
-    top: -8px;
+    .exercise-count {
+      background-color: rgb(171, 147, 147);
+      border-radius: 50%;
+      padding: 5px;
+      padding-left: 7px;
+      padding-right: 7px;
+
+      position: absolute;
+      top: -8px;
+    }
   }
-}
 
-.active-link {
-  color: white;
-  background-color: rgb(64, 64, 79);
-  font-weight: bold;
+  .active-link {
+    color: white;
+    background-color: rgb(64, 64, 79);
+    font-weight: bold;
+  }
 }

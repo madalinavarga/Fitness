@@ -13,6 +13,6 @@
       <label>Repetitions:</label>
       <input type="number" [(ngModel)]="exercise().repetitions" />
     </div>
-    <button mat-raised-button (click)="handleAddExercise()">Adauga</button>
+    <button mat-raised-button (click)="handleAddExercise()" [hidden]="handleAddVisibility()">Add</button>
   </div>
 </div>

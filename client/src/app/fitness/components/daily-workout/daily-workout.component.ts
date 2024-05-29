@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { ExercisesService } from '../../services/exercises.service';
 import { CommonModule } from '@angular/common';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
@@ -12,7 +12,7 @@ import { Exercise } from '../../models/exercise.interface';
   templateUrl: './daily-workout.component.html',
   styleUrl: './daily-workout.component.scss'
 })
-export class DailyWorkoutComponent {
+export class DailyWorkoutComponent{
   exercisesService = inject(ExercisesService)
   dailyExercisesSig = this.exercisesService.dailyWorkoutSig;
 

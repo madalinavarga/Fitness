@@ -1,23 +1,22 @@
-import { Injectable, OnInit, Signal, computed, signal } from '@angular/core';
-import { allExercises as mockData } from '../../data/exercises';
-import { Exercise, ExerciceDictionary } from '../models/exercise.interface';
+import { Injectable, OnInit, Signal, computed, signal } from "@angular/core";
+import { allExercises as mockData } from "../../data/exercises";
+import { Exercise, ExerciceDictionary } from "../models/exercise.interface";
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root",
 })
 export class ExercisesService {
   allExercisesSig = signal<ExerciceDictionary>({
     0: [
       {
         id: -1,
-        imgSrc: '',
-        title: ''
+        imgSrc: "",
+        title: "",
       },
-    ]
-  })
-  selectedGroupSig = signal<Exercise[]>([])
+    ],
+  });
+  selectedGroupSig = signal<Exercise[]>([]);
   dailyWorkoutSig = signal<Exercise[]>([]);
-
 
   constructor() {
     this.allExercisesSig.set(mockData);
@@ -28,20 +27,26 @@ export class ExercisesService {
   }
 
   addExerciseToDailyWorkout(newExercise: Exercise): void {
-    const exists = this.dailyWorkoutSig().some(exercise => exercise.id === newExercise.id && exercise.title === newExercise.title);
+    const exists = this.dailyWorkoutSig().some(
+      (exercise) =>
+        exercise.id === newExercise.id && exercise.title === newExercise.title
+    );
 
     if (!exists) {
       this.dailyWorkoutSig.set([...this.dailyWorkoutSig(), newExercise]);
     }
   }
 
-  changeExerciseStatus(exercise:Exercise):void{{
-    const updatedExercises= this.dailyWorkoutSig().map((e)=>{
-      if (e.id === exercise.id && e.title === exercise.title) {
-        return { ...e, completed: !e.completed };
-      }
-      return e;
-    } );
-    this.dailyWorkoutSig.set(updatedExercises);
-  }}
+  changeExerciseStatus(exercise: Exercise): void {
+    {
+      const updatedExercises = this.dailyWorkoutSig().map((e) => {
+        if (e.id === exercise.id && e.title === exercise.title) {
+          return { ...e, completed: !e.completed };
+        }
+        return e;
+      });
+
+      this.dailyWorkoutSig.set(updatedExercises);
+    }
+  }
 }
